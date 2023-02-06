@@ -20,6 +20,8 @@ func _input(event):
 		# print("relative_x: " + str(relative_x))
 		var count = 3
 		for child in self.get_children(): # for each parallaxlayer do...
+			if count > 50:
+				count = 10
 			child.motion_offset.x = count * relative_x
 			child.motion_offset.y = count * relative_y
 			count = count * 3

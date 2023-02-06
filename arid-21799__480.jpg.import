@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Passiflora-incarnata-Purple-Passion-Flower1.jpg-d966013a9d3e67ec257a1b2744eed79d.stex"
+path="res://.import/arid-21799__480.jpg-70589038c5ddec4afe169735eef19507.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Passiflora-incarnata-Purple-Passion-Flower1.jpg"
-dest_files=[ "res://.import/Passiflora-incarnata-Purple-Passion-Flower1.jpg-d966013a9d3e67ec257a1b2744eed79d.stex" ]
+source_file="res://arid-21799__480.jpg"
+dest_files=[ "res://.import/arid-21799__480.jpg-70589038c5ddec4afe169735eef19507.stex" ]
 
 [params]
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/MORNING (PEER GYNT), DE GRIEG.mp3-f100286d4e5fa497b13b689854d2df94.mp3str"
+
+[deps]
+
+source_file="res://MORNING (PEER GYNT), DE GRIEG.mp3"
+dest_files=[ "res://.import/MORNING (PEER GYNT), DE GRIEG.mp3-f100286d4e5fa497b13b689854d2df94.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
