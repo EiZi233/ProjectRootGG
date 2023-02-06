@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/project rootGG.icon.png-02efeb626cb0301c3a05f60425e1199f.stex"
+path="res://.import/project rootGG.icon.png-9d0b103ede2e091d650acb335fd17f90.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://deploy/project rootGG.icon.png"
-dest_files=[ "res://.import/project rootGG.icon.png-02efeb626cb0301c3a05f60425e1199f.stex" ]
+source_file="res://docs/project rootGG.icon.png"
+dest_files=[ "res://.import/project rootGG.icon.png-9d0b103ede2e091d650acb335fd17f90.stex" ]
 
 [params]
 

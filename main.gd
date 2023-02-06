@@ -9,6 +9,7 @@ var delay = 0
 var end = false
 var temp = 0
 var stopping = true
+var in_tween
 
 func _ready():
 	pass # Replace with function body.
@@ -22,9 +23,11 @@ func _input(event):
 				holding = true
 				stopping = false
 				$AudioStreamPlayer.play(temp)
-				var tween = create_tween().set_trans(Tween.TRANS_CUBIC)
-				tween.tween_property(self, "zoomspeed", 0.990, 3)
+				in_tween = create_tween().set_trans(Tween.TRANS_CUBIC)
+				in_tween.tween_property(self, "zoomspeed", 0.990, 3)
 			else:
+				if in_tween:
+					in_tween.kill()
 				temp = $AudioStreamPlayer.get_playback_position( )
 				stopping = true
 
@@ -62,7 +65,7 @@ func _process(delta):
 	elif(holding == true and stopping == true and not end):
 		#holding = false
 		if zooming:
-			zoomspeed = lerp(zoomspeed,0.999,0.2)
+			zoomspeed = lerp(zoomspeed,0.999,0.08)
 			
 			$Camera2D.zoom *= zoomspeed
 			$AudioStreamPlayer.volume_db -= 1
@@ -73,7 +76,7 @@ func _process(delta):
 				$AudioStreamPlayer.volume_db = 0
 		else:
 			$AudioStreamPlayer.volume_db -= 1
-			zoomspeed = lerp(zoomspeed,0.999,0.1)
+			zoomspeed = lerp(zoomspeed,0.999,0.08)
 			$ParallaxBackground/ParallaxLayer4/node/Light.scale /= zoomspeed
 			if zoomspeed > 0.998:
 				$AudioStreamPlayer.playing = false
