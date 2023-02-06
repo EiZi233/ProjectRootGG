@@ -115,6 +115,7 @@ scale = Vector2( 0.377321, 0.401106 )
 texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="ParallaxBackground/ParallaxLayer/node"]
+visible = false
 margin_left = -275.0
 margin_top = 163.0
 margin_right = 385.0
