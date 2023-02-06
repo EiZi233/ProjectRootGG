@@ -66,7 +66,7 @@ polygon = PoolVector2Array( -4, 20, 1021, 2, 1024, 591, -3, 605 )
 
 [node name="Img2033" type="Sprite" parent="ParallaxBackground/ParallaxLayer/node"]
 position = Vector2( 14.5, -5.49996 )
-scale = Vector2( 1.28376, 0.981787 )
+scale = Vector2( 1.23681, 0.981944 )
 texture = ExtResource( 8 )
 
 [node name="seed" type="Node2D" parent="ParallaxBackground/ParallaxLayer/node"]
