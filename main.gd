@@ -19,7 +19,7 @@ func _input(event):
 		if event.button_index == BUTTON_LEFT:
 			if Input.is_mouse_button_pressed(1):
 				holding = true
-				#$AudioStreamPlayer.play(temp)
+				$"Audio Visualiztion/AudioStreamPlayer".play(temp)
 				in_tween = create_tween().set_trans(Tween.TRANS_CUBIC)
 				in_tween.tween_property(self, "zoomspeed", 0.995, 3)
 			else:
@@ -64,26 +64,26 @@ func _process(_delta):
 			zoomspeed = lerp(zoomspeed,0.999,0.05)
 			
 			$Camera2D.zoom *= zoomspeed
-			#$AudioStreamPlayer.volume_db -= 1
+			$"Audio Visualiztion/AudioStreamPlayer".volume_db -= 1
 
 			if zoomspeed > 0.998:
 				holding = false
-				#$AudioStreamPlayer.playing = false
-				#$AudioStreamPlayer.volume_db = 0
+				$"Audio Visualiztion/AudioStreamPlayer".playing = false
+				$"Audio Visualiztion/AudioStreamPlayer".volume_db = 0
 		else:
-			#$AudioStreamPlayer.volume_db -= 1
+			$"Audio Visualiztion/AudioStreamPlayer".volume_db -= 1
 			zoomspeed = lerp(zoomspeed,0.999,0.05)
 			$ParallaxBackground/ParallaxLayer4/node/Light.scale /= zoomspeed
 			if zoomspeed > 0.998:
-				$AudioStreamPlayer.playing = false
-				$AudioStreamPlayer.volume_db = 0
+				$"Audio Visualiztion/AudioStreamPlayer".playing = false
+				$"Audio Visualiztion/AudioStreamPlayer".volume_db = 0
 				holding = false
 		
 
 
 func _on_Timer_timeout():
 	$AnimationPlayer.play("New Anim")
-	$AudioStreamPlayer.playing = false
+	$"Audio Visualiztion/AudioStreamPlayer".playing = false
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	get_tree().reload_current_scene()
