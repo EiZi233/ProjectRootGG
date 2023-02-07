@@ -25,7 +25,7 @@ func _input(event):
 			else:
 				if in_tween:
 					in_tween.kill()
-				#temp = $AudioStreamPlayer.get_playback_position( )
+				temp = $"Audio Visualiztion/AudioStreamPlayer".get_playback_position( )
 
 func end():
 	$Timer.start()
