@@ -6,7 +6,7 @@ onready var bottomRightArray = $CircleBase/Right/Bottom.get_children()
  
  
 const VU_COUNT = 6
-const HEIGHT = 2
+const HEIGHT = 1
 const FREQ_MAX = 11050.0
  
 const MIN_DB = 100
