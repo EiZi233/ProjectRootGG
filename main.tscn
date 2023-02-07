@@ -248,6 +248,7 @@ stream = ExtResource( 9 )
 autoplay = true
 
 [node name="CircleBase" type="TextureRect" parent="Audio Visualiztion"]
+visible = false
 margin_left = 335.0
 margin_top = 76.0
 margin_right = 504.0
