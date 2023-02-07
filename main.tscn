@@ -245,7 +245,6 @@ script = ExtResource( 18 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio Visualiztion"]
 stream = ExtResource( 9 )
-autoplay = true
 
 [node name="CircleBase" type="TextureRect" parent="Audio Visualiztion"]
 visible = false
