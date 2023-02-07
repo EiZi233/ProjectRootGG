@@ -19,13 +19,13 @@ func _input(event):
 		if event.button_index == BUTTON_LEFT:
 			if Input.is_mouse_button_pressed(1):
 				holding = true
-				$AudioStreamPlayer.play(temp)
+				#$AudioStreamPlayer.play(temp)
 				in_tween = create_tween().set_trans(Tween.TRANS_CUBIC)
 				in_tween.tween_property(self, "zoomspeed", 0.995, 3)
 			else:
 				if in_tween:
 					in_tween.kill()
-				temp = $AudioStreamPlayer.get_playback_position( )
+				#temp = $AudioStreamPlayer.get_playback_position( )
 
 func end():
 	$Timer.start()
@@ -64,14 +64,14 @@ func _process(_delta):
 			zoomspeed = lerp(zoomspeed,0.999,0.05)
 			
 			$Camera2D.zoom *= zoomspeed
-			$AudioStreamPlayer.volume_db -= 1
+			#$AudioStreamPlayer.volume_db -= 1
 
 			if zoomspeed > 0.998:
 				holding = false
-				$AudioStreamPlayer.playing = false
-				$AudioStreamPlayer.volume_db = 0
+				#$AudioStreamPlayer.playing = false
+				#$AudioStreamPlayer.volume_db = 0
 		else:
-			$AudioStreamPlayer.volume_db -= 1
+			#$AudioStreamPlayer.volume_db -= 1
 			zoomspeed = lerp(zoomspeed,0.999,0.05)
 			$ParallaxBackground/ParallaxLayer4/node/Light.scale /= zoomspeed
 			if zoomspeed > 0.998:

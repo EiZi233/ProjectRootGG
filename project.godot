@@ -19,9 +19,14 @@ config/icon="res://icon.png"
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
+[global]
+
+pixel=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+common/snap_controls_to_pixels=false
 
 [physics]
 
