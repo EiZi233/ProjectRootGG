@@ -17,14 +17,14 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton:
 		#zoomspeed = 0.999
-		if event.button_index == BUTTON_LEFT:
+		if event.button_index == BUTTON_LEFT and not end:
 			if Input.is_mouse_button_pressed(1):
 				$AudioStreamPlayer.volume_db = 0
 				holding = true
 				stopping = false
 				$AudioStreamPlayer.play(temp)
 				in_tween = create_tween().set_trans(Tween.TRANS_CUBIC)
-				in_tween.tween_property(self, "zoomspeed", 0.990, 3)
+				in_tween.tween_property(self, "zoomspeed", 0.995, 3)
 			else:
 				if in_tween:
 					in_tween.kill()
