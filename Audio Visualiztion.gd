@@ -25,7 +25,7 @@ func _process(delta):
 #	for i in range(1,VU_COUNT+1):   
 	var hz = FREQ_MAX / VU_COUNT;
 	var f = spectrum.get_magnitude_for_frequency_range(prev_hz,hz)
-	var energy = clamp((MIN_DB + linear2db(f.length()))/MIN_DB,0,1)
+	var energy = clamp((MIN_DB + linear2db(f.length()))/MIN_DB,0,2)
 	var height = energy * HEIGHT	
 	var targetVec = Vector2(0.377,0.401) * (1+(height/10))
 	#print(height/60)
