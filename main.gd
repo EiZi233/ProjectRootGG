@@ -32,11 +32,11 @@ func end():
 
 
 
-func _process(_delta):
+func _process(delta):
 	if Input.is_mouse_button_pressed(1): # Left click
 		if zooming:
 			#lerp(zoomspeed,0.992,0.01)
-			$Camera2D.zoom *= zoomspeed
+			$Camera2D.zoom = $Camera2D.zoom * pow(zoomspeed, delta*60)
 			if $Camera2D.zoom.x < 0.05:
 				$ParallaxBackground/ParallaxLayer4/node/ColorRect.color.a += 0.006
 				if $ParallaxBackground/ParallaxLayer4/node/ColorRect.color.a >= 1:
@@ -50,7 +50,7 @@ func _process(_delta):
 				if delay == 301:
 					var tween = create_tween().set_trans(Tween.TRANS_CUBIC)
 					tween.tween_property($ParallaxBackground/ParallaxLayer4/node/Light, "modulate", Color(1,1,1,1), 5)
-				$ParallaxBackground/ParallaxLayer4/node/Light.scale /= zoomspeed
+				$ParallaxBackground/ParallaxLayer4/node/Light.scale = $ParallaxBackground/ParallaxLayer4/node/Light.scale  * pow(1/zoomspeed, delta*60)
 			if $ParallaxBackground/ParallaxLayer4/node/Light.scale.x > 60:
 				if end == false:
 					end()
@@ -63,7 +63,7 @@ func _process(_delta):
 		if zooming:
 			zoomspeed = lerp(zoomspeed,0.999,0.05)
 			
-			$Camera2D.zoom *= zoomspeed
+			$Camera2D.zoom = $Camera2D.zoom * pow(zoomspeed, delta*60)
 			$"Audio Visualiztion/AudioStreamPlayer".volume_db -= 1
 
 			if zoomspeed > 0.998:
@@ -73,7 +73,7 @@ func _process(_delta):
 		else:
 			$"Audio Visualiztion/AudioStreamPlayer".volume_db -= 1
 			zoomspeed = lerp(zoomspeed,0.999,0.05)
-			$ParallaxBackground/ParallaxLayer4/node/Light.scale /= zoomspeed
+			$ParallaxBackground/ParallaxLayer4/node/Light.scale = $ParallaxBackground/ParallaxLayer4/node/Light.scale  * pow(1/zoomspeed, delta*60)
 			if zoomspeed > 0.998:
 				$"Audio Visualiztion/AudioStreamPlayer".playing = false
 				$"Audio Visualiztion/AudioStreamPlayer".volume_db = 0
